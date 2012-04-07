@@ -1,6 +1,6 @@
 # Collapsible Menus
 
-* (Tom McFarlin)[http://tommcfarlin.com]
+* [Tom McFarlin](http://tommcfarlin.com)
 * *License.* GPL and MIT
 
 ## Summary
