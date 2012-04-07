@@ -19,7 +19,7 @@ Make sure that jQuery is included on your page:
 
 Add the plugin to your page after jQuery has been included:
 
-`<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>`
+`<script type="text/javascript" src="jquery.collapsible-menu.min.js"></script>`
 
 ### 3. Write Your Markup
 
