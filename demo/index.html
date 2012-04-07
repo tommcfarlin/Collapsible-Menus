@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head profile="http://gmpg.org/xfn/11">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.collapsible-menu.min.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+	<title>Collapsible Menu Demo</title>
+	</head>
+	<body>
+	    <div id="container">
+	    
+	      <div id="about">
+	        <h1>
+	          Collapse Demo
+	        </h1>
+	        <p>
+	          Provides a collapsable effect for nested menus. Contains support for providing classes to the collapsed or expanded menus         
+	          based on the, and callbacks for Ajax functionality for easily loading page fragments without
+	          having to reload the page. You can also initially disable the menu.
+	        </p>
+	        <p>
+	          Click on any menu item with child elements to demo.
+	        </p>
+	      </div><!-- /about -->
+	      
+	      <div id="demo">
+	        <ul id="menu">
+	          <li>
+	            Leaf
+	          </li>
+	          <li id="root-1">
+	            Root 1
+	          </li>
+	          <li>
+	            <ul>
+	              <li>
+	                Leaf
+	              </li>
+	              <li id="root-2">
+	                Root 2
+	              </li>
+	              <li>
+	                <ul>
+	                  <li>
+	                    Leaf.
+	                  </li>
+	                </ul>
+	              </li>
+	            </ul>
+	            <li>
+	              You can next for multiple levels...
+	            </li>
+	            <li>
+	              <ul>
+	                <li>
+	                  Here is one level
+	                </li>
+	                <li>
+	                  <ul>
+	                    <li>
+	                      And another level
+	                    </li>
+	                    <li>
+	                      <ul>
+	                        <li>
+	                          End of line
+	                        </li>
+	                      </ul>
+	                    </li>
+	                  </ul>
+	                </li>
+	              </ul>
+	            </li>
+	          </li>
+	        </ul>
+	        <div id="status"></div>
+	      </div><!-- /demo -->
+	      
+	    </div><!-- /container -->
+	</body>
+</html>
+	
