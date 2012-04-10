@@ -14,7 +14,7 @@
 	
 	    var opts = $.extend({}, $.fn.collapsible.defaults, options);
 		return this.each(function(evt) {
-			setupMenus(opts);
+			setupMenus($(this).attr('id'), opts);
 	    });
 	
 	}; // end collapse
@@ -29,9 +29,9 @@
 	 *
 	 * opts   The plugins array of options
 	 */
-	function setupMenus(opts) {
+	function setupMenus(sId, opts) {
 
-		$('ul').parent('li')
+		$('#' + sId + ' li ul').parent('li')
 			.prev()
 			.each(function() {
 			
@@ -57,8 +57,7 @@
 	 * $menu	 The menu to toggle
 	 */
 	function toggle(opts, $menu) {
-	
-		$menu = $(this).next();
+
 		switch(opts.effect.toString().toLowerCase()) {
 		
 			case 'fade':
@@ -85,7 +84,7 @@
 	* $menu	 The menu to toggle
 	*/
 	function collapse(opts, $menu) {
-	
+
 		// Updates the class name of the menu based on its state
 		$menu.toggleClass(function() {
 		

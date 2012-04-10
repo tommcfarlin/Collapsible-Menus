@@ -1,8 +1,13 @@
 $(function() {
 
 	$('#menu').collapsible({
-		effect: 'slide',
+		effect: 'none',
 	    initialCollapse: true
 	});
-
+	
+	$('#accordion').collapsible({
+		effect: 'slide',
+		initialCollapse: true
+	});
+	
 });

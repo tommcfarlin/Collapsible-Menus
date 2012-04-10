@@ -76,6 +76,10 @@ When a nested menu has been expanded, the parent `ul` will have the class `expan
 
 ## Changelog
 
-_1.0 (2012.04.07)_
+_0.2 (2012.04.09)_
+
+* Adding support for multiple collapsible menus per page
+
+_0.1 (2012.04.07)_
 
 * Initial Release
