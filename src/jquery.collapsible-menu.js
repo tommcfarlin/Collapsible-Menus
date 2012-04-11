@@ -14,7 +14,7 @@
 	
 	    var opts = $.extend({}, $.fn.collapsible.defaults, options);
 		return this.each(function(evt) {
-			setupMenus($(this).attr('id'), opts);
+			menuHandler($(this).attr('id'), opts);
 	    });
 	
 	}; // end collapse
@@ -29,88 +29,96 @@
 	 *
 	 * opts   The plugins array of options
 	 */
-	function setupMenus(sId, opts) {
+	function menuHandler(sId, opts) {
 
+		// Use the menu ID attribute to properly select nested menus
 		$('#' + sId + ' li ul').parent('li')
 			.prev()
 			.each(function() {
 			
 				// If set, collapse nested menus on load
-				if(opts.initialCollapse) {
-					collapse(opts, $(this).next());
-				} // end if
+				if( opts.initialCollapse ) {
+					
+					$(this).next()
+						.addClass('collapsed-menu')
+						.hide();
+						
+				} else {
+				
+					$(this).next()
+						.addClass('expanded-menu');
+						
+				} // end if/else
 				
 				// Expand or collapse menu when the root menu is clicked
 				$(this).on('click', function() {
-					toggle(opts, $(this).next());
+					
+					var $menu = $(this).next();
+					switch(opts.effect.toString().toLowerCase()) {
+					
+						case 'fade':
+						
+							if($menu.hasClass('expanded-menu' )) {
+							
+								$menu.fadeOut('fast', function() {
+									$(this).removeClass('expanded-menu')
+										.addClass('collapsed-menu');
+								});
+									
+							} else {
+								
+								$menu.removeClass('collapsed-menu')
+									.addClass('expanded-menu')
+									.fadeIn('fast');
+								
+							} // end if/else						
+						
+							break;
+							
+						case 'slide':
+						
+							if( $menu.hasClass('expanded-menu' ) ) {
+							
+								$menu.slideUp('fast', function() {
+									$(this).removeClass('expanded-menu')
+										.addClass('collapsed-menu');
+								});
+									
+							} else {
+								
+								$menu.removeClass('collapsed-menu')
+									.addClass('expanded-menu')
+									.slideDown('fast');
+								
+							} // end if/else
+						
+							break;
+							
+						default:
+							
+							if( $menu.hasClass('expanded-menu' ) ) {
+							
+								$menu.removeClass('expanded-menu')
+									.addClass('collapsed-menu')
+									.hide();
+									
+							} else {
+								
+								$menu.removeClass('collapsed-menu')
+									.addClass('expanded-menu')
+									.show();
+								
+							} // end if/else
+							
+							break;
+					
+					} // end switch/case
+
 				});
 				
 			});
 	
-	} // end setupMenus
-	
-	/**
-	 * Click handler that toggles the visibility of each menu based
-	 * on the effect option specified.
-	 *
-	 * opts   	  The plugins array of options
-	 * $menu	 The menu to toggle
-	 */
-	function toggle(opts, $menu) {
-
-		switch(opts.effect.toString().toLowerCase()) {
-		
-			case 'fade':
-				$menu.fadeToggle('fast');
-				break;
-			
-			case 'slide':
-				$menu.slideToggle('fast');
-				break;
-			
-			default:
-				$menu.toggle();
-				break;
-		
-		} // end switch/case
-	
-	} // end toggle
-	
-	/**
-	* Toggles the visibility of each menu based on the effect
-	* option specified.
-	*
-	* opts   The plugins array of options
-	* $menu	 The menu to toggle
-	*/
-	function collapse(opts, $menu) {
-
-		// Updates the class name of the menu based on its state
-		$menu.toggleClass(function() {
-		
-			var sClass = '';
-		  
-		  	if($(this).hasClass('collapsed-menu')) {
-		  	
-			    $(this)
-			    	.removeClass('collapsed-menu')
-			    	.show();
-			    sClass = 'expanded-menu';
-			    
-		  	} else {
-		  	
-			    $(this)
-			    	.removeClass('expanded-menu')
-			    	.hide();
-			    sClass = 'collapsed-menu';
-			    
-		  	} // end if/else
-		  
-		  return sClass;
-		  
-		});
-	
-	} // end collapse
+	} // end menuHandler
 	
 	/*--------------------------------------------------*
 	* Default Settings
