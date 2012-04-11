@@ -38,7 +38,8 @@ Next, add a nested, unordered list to one of the list items:
 ```html
 <ul id="menu">
 	<li>Item 1</li>
-	<li>Item 2
+	<li>Item 2</li>
+	<li>
 		<ul>
 			<li>Nested Item 1</li>
 			<li>Nested Item 2</li>
