@@ -1,123 +1,186 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head profile="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.collapsible-menu.min.js"></script>
-    <script type="text/javascript" src="js/site.js"></script>
-	<title>Collapsible Menu Demo</title>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A simple jQuery plugin for creating collapsible menus using nested, unordered lists.">
+		<meta name="author" content="Tom McFarlin">
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/prettify.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/prettify.js"></script>
+		<script type="text/javascript" src="js/jquery.collapsible-menu.min.js"></script>
+		<script type="text/javascript" src="js/site.js"></script>
+		<title>Collapsible Menus | A jQuery Plugin For Collapsible Menus</title>
 	</head>
 	<body>
-	    <div id="container">
-	    
-	      <div id="about">
-	        <h1>
-	          Collapse Demo
-	        </h1>
-	        <p>
-	          Provides a collapsable effect for nested menus. Contains support for providing classes to the collapsed or expanded menus         
-	          based on the, and callbacks for Ajax functionality for easily loading page fragments without
-	          having to reload the page. You can also initially disable the menu.
-	        </p>
-	      </div><!-- /about -->
-	      
-	      <h2>Vanilla Menu Demo</h2>
-	      
-	      <div class="demo">
-	        <ul id="menu">
-	          <li>
-	            Leaf
-	          </li>
-	          <li id="root-1">
-	            Root 1
-	          </li>
-	          <li>
-	            <ul>
-	              <li>
-	                Leaf
-	              </li>
-	              <li id="root-2">
-	                Root 2
-	              </li>
-	              <li>
-	                <ul>
-	                  <li>
-	                    Leaf.
-	                  </li>
-	                </ul>
-	              </li>
-	            </ul>
-	            <li>
-	              You can next for multiple levels...
-	            </li>
-	            <li>
-	              <ul>
-	                <li>
-	                  Here is one level
-	                </li>
-	                <li>
-	                  <ul>
-	                    <li>
-	                      And another level
-	                    </li>
-	                    <li>
-	                      <ul>
-	                        <li>
-	                          End of line
-	                        </li>
-	                      </ul>
-	                    </li>
-	                  </ul>
-	                </li>
-	              </ul>
-	            </li>
-	          </li>
-	        </ul>
-	        <div id="status"></div>
-	      </div><!-- /.demo -->
-
-		<h2>Accordion-style Demo</h2>
-
-	      <div class="demo">
-	      	<ul id="accordion">
-	      		<li>Parent #1</li>
-	      		<li>
-	      			<ul>
-	      				<li>Lorem ipsum</li>
-	      			</ul>
-	      		</li>
-	      		<li>Parent #2</li>
-	      		<li>
-	      			<ul>
-	      				<li>Lorem ipsum</li>
-	      			</ul>
-	      		</li>
-	      		<li>Parent #3</li>
-	      		<li>
-	      			<ul>
-	      				<li>Lorem ipsum</li>
-	      			</ul>
-	      		</li>
-	      		<li>Parent #4</li>
-	      		<li>
-	      			<ul>
-	      				<li>Lorem ipsum</li>
-	      			</ul>
-	      		</li>
-	      		<li>Parent #5</li>
-	      		<li>
-	      			<ul>
-	      				<li>Lorem ipsum</li>
-	      			</ul>
-	      		</li>
-	      	</ul>
-	      </div><!-- /.demo -->
-
-	      <div id="footer">
-	      	<a href="http://github.com/tommcfarlin/Collapsible-Menus">Return To GitHub</a>
-	      </div>
-	      
-	    </div><!-- /container -->
+	
+		<header>	
+			<div class="container">
+				<h1>Collapsible Menus</h1>
+				<p class="lead">A jQuery plugin for creating collapsible menus using nested, unordered lists.</p>
+			</div><!-- /.container -->
+		</header><!-- /header -->
+	
+		<div class="container">
+	
+			<nav class="subnav">
+				<ul class="nav nav-pills container">
+					<li><a href="#how-to">How To</a></li>
+					<li><a href="#examples">Examples</a></li>
+					<li><a href="#download">Download</a></li>
+					<li class="hidden"><a href="#top">Back To Top</a></li>
+				</ul><!-- /.nav -->
+			</nav><!-- /nav -->
+	
+			<div id="how-to">
+				
+				<h2>How To</h2>
+				
+				<h3>1. Include jQuery</h3>
+				<p>Make sure that jQuery is included on your page:</p>
+				<p><pre class="prettyprint">&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;</pre></p>
+				
+				<h3>2. Include the plugin</h3>
+				<p>Add the plugin to your page after jQuery has been included:</p>
+				<p><pre class="prettyprint">&lt;script type="text/javascript" src="jquery.collapsible-menu.min.js"&gt;&lt;/script&gt;</pre></p>
+				
+				<h3>3. Write Your Markup</h3>
+				<p>Collapsible Menus is meant to be used with nested unordered menus. To get started, create an unordered list and give it an ID:</p>
+				<p>
+					<pre class="prettyprint">
+&lt;ul id="menu"&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</p>
+				<p>Next, add a nested, unordered list to one of the list items:</p>
+				<p>
+					<pre class="prettyprint">
+&lt;ul id="menu"&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Nested Item 1&lt;/li&gt;
+            &lt;li&gt;Nested Item 2&lt;/li&gt;
+            &lt;li&gt;Nested Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+				</p>
+				
+				<h3>4. Enable The Plugin</h3>
+				<p>In the JavaScript for your site, pass the ID of the menu to which you want to convert to a collapsible menu:</p>
+				<p>
+					<pre class="prettyprint">
+$(function() {
+    $('#menu').collapsible();
+});</pre>
+				</p>
+				
+				<p>Here's an example of the two parameters the plugin supports:</p>
+				<p>
+					<pre class="prettyprint">
+$(function() {
+    $('#menu').collapsible({
+        effect: 'none',             // The effect to use when expanding and collapsing the menu. 
+        initialCollapse: true       // When true, collapses the menu when the page loads.
+    });
+});</pre>
+				</p>
+				
+				<h2>Additional Notes</h2>
+				
+				<h3>Parameters</h3>
+				<ul>
+					<li><code>effect</code> accepts three parameters: <code>none</code>, <code>slide</code>, and <code>fade</code>. Defaults to <code>none</code>.</li>
+					<li><code>initialCollapse</code> accepts one of two parameters: <code>true</code> or <code>false</code>. Defaults to <code>true</code>.</li>
+				</ul>
+				
+				<h3>Class Names</h3>
+				<ul>
+					<li>When the menu is expanded, the parent <code>ul</code> will have the <code>expanded-menu</code> class.</li>
+					<li>When the menu is collapsed, the parent <code>ul</code> will have the <code>collapsed-menu</code> class.</li>
+				</ul>
+				
+			</div><!-- /#how-to -->
+	
+			<div id="examples">
+			
+				<h2>Examples</h2>
+				<p>Collapsible Menus attempts to be as flexible as possible. The plugin uses nothing but unordered lists and two class names so that
+				you can provide as much (or as little) as styling as you'd like. Here are a couple of basic examples for how to use the plugin.</p>
+				
+				<h3>Vanilla</h3>
+				<p>
+					<ul id="vanilla-menu">
+						<li>Item with no children</li>
+						<li>Item with one child</li>
+						<li>
+							<ul>
+								<li>Only Child</li>
+							</ul>
+						</li>
+						<li>Item with nested children</li>
+							<li>
+							<ul>
+								<li>First Child</li>
+								<li>Second Child and a Parent</li>
+								<li>
+									<ul>
+										<li>First grandchild</li>
+										<li>Second grandchild</li>
+									</ul>
+								</li>
+								<li>Third Child</li>
+							</ul>
+						</li>
+						<li>Item with no children</li>
+					</ul><!-- /#vanilla-menu -->
+				</p>
+				
+				<h3>Accordion</h3>
+				<p>
+					<ul id="accordion">
+						<li><a href="javascript:;">Menu Heading #1</a></li>
+						<li>
+							<ul>
+								<li>Chuck andouille ham hock, swine cow salami turducken jowl meatloaf prosciutto corned beef brisket frankfurter. Capicola shank short ribs hamburger chuck. Venison ground round jowl spare ribs. Shoulder pork loin jowl spare ribs, swine shank sausage cow. Bresaola cow corned beef andouille tail. Tail pastrami andouille, flank corned beef pork chop short loin biltong.</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">Menu Heading #2</a></li>
+						<li>
+							<ul>
+								<li>Jowl sirloin shankle, frankfurter ham ball tip tri-tip. Salami sirloin shankle turducken meatball. Short ribs brisket chuck, pork belly frankfurter pig swine venison cow prosciutto chicken shoulder short loin pastrami. Ground round venison ball tip brisket flank, frankfurter leberkas rump beef ribs bacon ham hock ribeye pig tail beef.</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">Menu Heading #3</a></li>
+						<li>
+							<ul>
+								<li>Short ribs turkey kielbasa ham hock, andouille pastrami strip steak frankfurter jerky pork loin t-bone speck sirloin. Ball tip swine rump ribeye. Chicken pancetta shoulder, beef ribs pork chop fatback speck hamburger spare ribs drumstick tenderloin frankfurter pork belly ground round. </li>
+							</ul>
+						</li>
+					</ul><!-- /#accordion -->
+				</p>
+				
+			</div><!-- /#content -->
+			
+			<div id="download">
+				<h2>Download</h2>
+				<p>Collapsible Menus is <strong>1KB</strong> minified, <strong>3KB</strong> raw. The download includes this demo page, the <a href="https://github.com/tommcfarlin/Collapsible-Menus/blob/master/readme.md">README</a>, and the raw and
+				minified source code.</p>
+				<p><button class="btn btn-large">Download on GitHub</button></p>
+			</div><!-- /#download -->
+		
+		</div><!-- /.container -->
+		
+		<footer>
+			<p>&copy; 2012. All Rights (and Most Wrongs) Reserved. <a href="http://tommcfarlin.com">Tom McFarlin</a></p>
+		</footer><!-- /footer -->
+		
 	</body>
 </html>
-	
