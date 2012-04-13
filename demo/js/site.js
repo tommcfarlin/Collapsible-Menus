@@ -26,7 +26,7 @@ $(function() {
 	});
 	
 	$('button').click(function() {
-		window.location.href = 'https://github.com/tommcfarlin/Collapsible-Menus/zipball/master';
+		window.location.href = 'https://github.com/tommcfarlin/Collapsible-Menus/';
 	});
 
 	/* ----- Menu Demos----- */

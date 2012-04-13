@@ -20,9 +20,6 @@ h2 {
 header {
 	padding-top: 32px;
 	margin-bottom: 24px;
-	background: rgb(250, 250, 250);
-	box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
-	border-bottom: 1px solid #eee;
 }
 
 header h1 {
@@ -114,4 +111,22 @@ footer {
 	text-align: center;
 	background: rgb(250, 250, 250);
 	padding: 24px;
+}
+
+footer .left {
+	float: left;
+}
+
+footer .twitter-count-horizontal {
+	float: left;
+	width: 120px !important;
+}
+
+footer #___plusone_0 {
+	float: right;
+	margin-top: 2px !important;
+}
+
+footer .right {
+	float: right;
 }
