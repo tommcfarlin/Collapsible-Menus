@@ -1,5 +1,5 @@
 /*
- * Collapsible Menu
+ * Collapsible Menus
  * A jQuery plugin for creating collapsible menus out of unordered lists.
  *
  * Copyright 2012 Tom McFarlin, http://tommcfarlin.com

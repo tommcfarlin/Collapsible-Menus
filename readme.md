@@ -17,9 +17,9 @@ Make sure that jQuery is included on your page:
 
 ### 2. Include Collapsible Menu
 
-Add the plugin to your page after jQuery has been included:
+Add the plugin to your page:
 
-`<script type="text/javascript" src="jquery.collapsible-menu.min.js"></script>`
+`<script type="text/javascript" src="jquery.collapsible-menus.min.js"></script>`
 
 ### 3. Write Your Markup
 
