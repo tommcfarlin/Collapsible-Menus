@@ -1,6 +1,6 @@
 /*
  * Collapsible Menus
- * A jQuery plugin for creating collapsible menus out of unordered lists.
+ * A jQuery plugin that makes it easy to create collapsible menus using nested, unordered lists.
  *
  * Copyright 2012 Tom McFarlin, http://tommcfarlin.com
  * Released under the MIT License

@@ -5,7 +5,7 @@
 
 ## Summary
 
-A simple jQuery plugin for creating collapsible menus out of nested, unordered lists.
+Collapsible Menus for jQuery is a plugin that makes it easy to create collapsible menus using nested, unordered lists.
 
 ## How To
 
