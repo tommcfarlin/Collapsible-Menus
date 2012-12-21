@@ -1,6 +1,6 @@
 # Collapsible Menus
 
-* [Tom McFarlin](http://tommcfarlin.com)
+* [Tom McFarlin](http://tommcfarlin.com/)
 * *License.* GPL and MIT
 
 ## Summary
@@ -13,7 +13,7 @@ Collapsible Menus for jQuery is a plugin that makes it easy to create collapsibl
 
 Make sure that jQuery is included on your page:
 
-`<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>`
+`<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>`
 
 ### 2. Include Collapsible Menu
 
@@ -76,6 +76,12 @@ $(function() {
 When a nested menu has been expanded, the parent `ul` will have the class `expanded-menu`; otherwise, the nested `ul` will have the class `collapsed-menu.`
 
 ## Changelog
+
+_1.1 (2012.12.20)_
+
+* Collapsible Menus now throws an exception if it's called on an element that does not have an attribute
+* Processed and minified using JSLint
+* Verifying compatibility with jQuery 1.8.3
 
 _1.0 (2012.04.16)_
 

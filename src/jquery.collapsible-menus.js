@@ -4,20 +4,13 @@
  *
  * Copyright 2012 Tom McFarlin, http://tommcfarlin.com
  * Released under the MIT License
+ * http://tommcfarlin.com/collapsible-menus/
  *
- * http://github.com/tommcfarlin/Collapsible-Menus
+ * @version	1.1
  */
 
 (function($) {
-
-	$.fn.collapsible = function(options) {
-	
-	    var opts = $.extend({}, $.fn.collapsible.defaults, options);
-		return this.each(function(evt) {
-			menuHandler($(this).attr('id'), opts);
-	    });
-	
-	}; // end collapse
+	"use strict";
 
 	/*--------------------------------------------------*
  	 * Helper Functions
@@ -124,9 +117,24 @@
 	* Default Settings
 	*--------------------------------------------------*/
 	
+	$.fn.collapsible = function(options) {
+	
+	    var opts = $.extend({}, $.fn.collapsible.defaults, options);
+		return this.each(function(evt) {
+
+			if( undefined === $(this).attr('id') ) {
+				throw "Specified element does not include an ID attribute.";
+			} else {
+				menuHandler($(this).attr('id'), opts);	
+			} // end if/else
+			
+	    });
+	
+	}; // end collapse
+	
 	$.fn.collapsible.defaults = {
 	    effect: 'none',
 	    initialCollapse: false
 	}; // end defaults
 	
-})(jQuery);
+}(jQuery));
